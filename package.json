@@ -1,0 +1,12 @@
+{
+  "name": "my-first-agent",
+  "version": "1.0.0",
+  "description": "Learning projects: Agent, Full-Stack App, Browser Automation",
+  "type": "module",
+  "scripts": {
+    "agent": "node agent/birthday-agent.js",
+    "server": "node app/server.js",
+    "browser": "node browser/automate.js"
+  },
+  "dependencies": {}
+}

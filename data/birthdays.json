@@ -1,0 +1,18 @@
+{
+    "birthdays": [
+      {
+        "name": "David Cohen",
+        "date": "2026-04-01",
+        "source": "google-calendar",
+        "message": "",
+        "sent": false
+      },
+      {
+        "name": "Sarah Levi",
+        "date": "2026-04-01",
+        "source": "facebook",
+        "message": "",
+        "sent": false
+      }
+    ]
+  }

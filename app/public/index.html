@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Birthday Agent</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #1a1a2e;
+      color: #eee;
+      min-height: 100vh;
+      padding: 2rem;
+    }
+    h1 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      color: #e94560;
+    }
+    .card {
+      background: #16213e;
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 1rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .card .info h2 { font-size: 1.3rem; margin-bottom: 0.3rem; }
+    .card .info .source { color: #888; font-size: 0.85rem; }
+    .card .info .message {
+      margin-top: 0.5rem;
+      color: #e94560;
+      font-size: 1.1rem;
+    }
+    .copy-btn {
+      background: #e94560;
+      color: white;
+      border: none;
+      padding: 0.6rem 1.2rem;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      white-space: nowrap;
+    }
+    .copy-btn:hover { background: #c73650; }
+    .copy-btn.copied { background: #4caf50; }
+    .empty { text-align: center; color: #888; margin-top: 3rem; font-size: 1.2rem; }
+    #loading { text-align: center; color: #888; margin-top: 3rem; }
+  </style>
+</head>
+<body>
+  <h1>🎂 Birthday Agent</h1>
+  <div id="loading">Loading birthdays...</div>
+  <div id="birthdays"></div>
+
+  <script>
+    async function loadBirthdays() {
+      const res = await fetch('/api/birthdays');
+      const data = await res.json();
+      const container = document.getElementById('birthdays');
+      const loading = document.getElementById('loading');
+      loading.style.display = 'none';
+
+      if (data.birthdays.length === 0) {
+        container.innerHTML = '<p class="empty">No birthdays today</p>';
+        return;
+      }
+
+      data.birthdays.forEach(b => {
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.innerHTML = `
+          <div class="info">
+            <h2>${b.name}</h2>
+            <span class="source">${b.source}</span>
+            <p class="message">${b.message || 'No message yet'}</p>
+          </div>
+          <button class="copy-btn" onclick="copyMessage(this, '${b.message}')">
+            Copy
+          </button>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    function copyMessage(btn, message) {
+      navigator.clipboard.writeText(message);
+      btn.textContent = 'Copied!';
+      btn.classList.add('copied');
+      setTimeout(() => {
+        btn.textContent = 'Copy';
+        btn.classList.remove('copied');
+      }, 2000);
+    }
+
+    loadBirthdays();
+  </script>
+</body>
+</html>

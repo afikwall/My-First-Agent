@@ -8,5 +8,7 @@
     "server": "node app/server.js",
     "browser": "node browser/automate.js"
   },
-  "dependencies": {}
+  "dependencies": {
+    "puppeteer": "^24.40.0"
+  }
 }

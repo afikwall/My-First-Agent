@@ -16,74 +16,119 @@
     h1 {
       text-align: center;
       font-size: 2rem;
-      margin-bottom: 2rem;
+      margin-bottom: 0.5rem;
       color: #e94560;
     }
+    .subtitle {
+      text-align: center;
+      color: #888;
+      margin-bottom: 2rem;
+      font-size: 0.9rem;
+    }
+    .stats {
+      text-align: center;
+      margin-bottom: 1.5rem;
+      color: #aaa;
+    }
+    .stats span { margin: 0 0.5rem; }
     .card {
       background: #16213e;
       border-radius: 12px;
       padding: 1.5rem;
-      margin-bottom: 1rem;
-      max-width: 600px;
+      margin-bottom: 0.8rem;
+      max-width: 650px;
       margin-left: auto;
       margin-right: auto;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      transition: opacity 0.3s;
     }
-    .card .info h2 { font-size: 1.3rem; margin-bottom: 0.3rem; }
-    .card .info .source { color: #888; font-size: 0.85rem; }
+    .card.sent { opacity: 0.4; }
+    .card .info h2 { font-size: 1.2rem; margin-bottom: 0.3rem; }
+    .card .info .source {
+      color: #888;
+      font-size: 0.75rem;
+      margin-bottom: 0.4rem;
+    }
     .card .info .message {
-      margin-top: 0.5rem;
       color: #e94560;
-      font-size: 1.1rem;
+      font-size: 1.05rem;
+      direction: rtl;
+    }
+    .buttons { display: flex; gap: 0.5rem; flex-shrink: 0; }
+    .copy-btn, .sent-btn {
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 0.85rem;
+      white-space: nowrap;
     }
     .copy-btn {
       background: #e94560;
       color: white;
-      border: none;
-      padding: 0.6rem 1.2rem;
-      border-radius: 8px;
-      cursor: pointer;
-      font-size: 0.9rem;
-      white-space: nowrap;
     }
     .copy-btn:hover { background: #c73650; }
-    .copy-btn.copied { background: #4caf50; }
+    .sent-btn {
+      background: #333;
+      color: #aaa;
+    }
+    .sent-btn:hover { background: #444; }
+    .sent-btn.done {
+      background: #4caf50;
+      color: white;
+    }
     .empty { text-align: center; color: #888; margin-top: 3rem; font-size: 1.2rem; }
     #loading { text-align: center; color: #888; margin-top: 3rem; }
   </style>
 </head>
 <body>
   <h1>🎂 Birthday Agent</h1>
+  <p class="subtitle" id="date"></p>
+  <div class="stats" id="stats"></div>
   <div id="loading">Loading birthdays...</div>
   <div id="birthdays"></div>
 
   <script>
+    document.getElementById('date').textContent = new Date().toLocaleDateString('he-IL', {
+      weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'
+    });
+
     async function loadBirthdays() {
       const res = await fetch('/api/birthdays');
       const data = await res.json();
       const container = document.getElementById('birthdays');
       const loading = document.getElementById('loading');
+      const stats = document.getElementById('stats');
       loading.style.display = 'none';
 
       if (data.birthdays.length === 0) {
-        container.innerHTML = '<p class="empty">No birthdays today</p>';
+        container.innerHTML = '<p class="empty">אין ימי הולדת היום 🎉</p>';
         return;
       }
 
-      data.birthdays.forEach(b => {
+      const total = data.birthdays.length;
+      const sentCount = data.birthdays.filter(b => b.sent).length;
+      stats.innerHTML = `<span>סה"כ: ${total}</span> | <span>נשלחו: ${sentCount}</span> | <span>נותרו: ${total - sentCount}</span>`;
+
+      data.birthdays.forEach((b, i) => {
         const card = document.createElement('div');
-        card.className = 'card';
+        card.className = 'card' + (b.sent ? ' sent' : '');
         card.innerHTML = `
           <div class="info">
             <h2>${b.name}</h2>
-            <span class="source">${b.source}</span>
-            <p class="message">${b.message || 'No message yet'}</p>
+            <div class="source">${b.source}</div>
+            <p class="message">${b.message || 'No message'}</p>
           </div>
-          <button class="copy-btn" onclick="copyMessage(this, '${b.message}')">
-            Copy
-          </button>
+          <div class="buttons">
+            <button class="copy-btn" onclick="copyMessage(this, \`${b.message.replace(/`/g, '')}\`)">
+              העתק
+            </button>
+            <button class="sent-btn ${b.sent ? 'done' : ''}" onclick="markSent(this, ${i})">
+              ${b.sent ? '✓ נשלח' : 'סמן כנשלח'}
+            </button>
+          </div>
         `;
         container.appendChild(card);
       });
@@ -91,12 +136,21 @@
 
     function copyMessage(btn, message) {
       navigator.clipboard.writeText(message);
-      btn.textContent = 'Copied!';
-      btn.classList.add('copied');
-      setTimeout(() => {
-        btn.textContent = 'Copy';
-        btn.classList.remove('copied');
-      }, 2000);
+      btn.textContent = 'הועתק!';
+      setTimeout(() => { btn.textContent = 'העתק'; }, 2000);
+    }
+
+    async function markSent(btn, index) {
+      await fetch(`/api/birthdays/${index}/sent`, { method: 'POST' });
+      btn.textContent = '✓ נשלח';
+      btn.classList.add('done');
+      btn.closest('.card').classList.add('sent');
+
+      const stats = document.getElementById('stats');
+      const cards = document.querySelectorAll('.card');
+      const total = cards.length;
+      const sentCount = document.querySelectorAll('.card.sent').length;
+      stats.innerHTML = `<span>סה"כ: ${total}</span> | <span>נשלחו: ${sentCount}</span> | <span>נותרו: ${total - sentCount}</span>`;
     }
 
     loadBirthdays();

@@ -2,3 +2,6 @@ node_modules/
 .env
 .DS_Store
 screenshots/
+credentials.json 
+token.json
+fb-cookies.json

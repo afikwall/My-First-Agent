@@ -1,18 +1,305 @@
 {
-    "birthdays": [
-      {
-        "name": "David Cohen",
-        "date": "2026-04-01",
-        "source": "google-calendar",
-        "message": "",
-        "sent": false
-      },
-      {
-        "name": "Sarah Levi",
-        "date": "2026-04-01",
-        "source": "facebook",
-        "message": "",
-        "sent": false
-      }
-    ]
-  }
+  "birthdays": [
+    {
+      "name": "Rom’s new born",
+      "date": "2026-04-02",
+      "source": "google-calendar (Birthday Calendar)",
+      "message": "Rom’s, מזל טוב! 🌟 שנה חדשה מלאה בהצלחות!",
+      "sent": true
+    },
+    {
+      "name": "Hadar Yerushalmi",
+      "date": "2026-04-03",
+      "source": "facebook",
+      "message": "יום הולדת שמח Hadar! 🎂 שיהיה לך יום מדהים!",
+      "sent": true
+    },
+    {
+      "name": "Gal Misgav",
+      "date": "2026-04-03",
+      "source": "facebook",
+      "message": "Gal, מזל טוב! 🌟 שנה חדשה מלאה בהצלחות!",
+      "sent": false
+    },
+    {
+      "name": "Inbar Bzezinsky",
+      "date": "2026-04-03",
+      "source": "facebook",
+      "message": "Inbar, יום הולדת שמח! 🎉 מאחל/ת לך שנה מלאה באושר ובריאות!",
+      "sent": false
+    },
+    {
+      "name": "Dor Nice",
+      "date": "2026-04-03",
+      "source": "facebook",
+      "message": "יום הולדת שמח Dor! ❤️ מאחל/ת לך רק דברים טובים!",
+      "sent": false
+    },
+    {
+      "name": "Dan Peleg",
+      "date": "2026-04-03",
+      "source": "facebook",
+      "message": "יום הולדת שמח Dan! 🎁 שיהיה מושלם!",
+      "sent": false
+    },
+    {
+      "name": "Tamar Lukoianichev",
+      "date": "2026-04-03",
+      "source": "facebook",
+      "message": "Tamar, מזל טוב! 🌟 שנה חדשה מלאה בהצלחות!",
+      "sent": false
+    },
+    {
+      "name": "Keren Mozes",
+      "date": "2026-04-03",
+      "source": "facebook",
+      "message": "Keren יום הולדת שמח! 🎈 שתמשיך להיות מדהים/ה!",
+      "sent": false
+    },
+    {
+      "name": "Yitzhak Wodage",
+      "date": "2026-04-03",
+      "source": "facebook",
+      "message": "יום הולדת שמח Yitzhak! 🎁 שיהיה מושלם!",
+      "sent": false
+    },
+    {
+      "name": "Charly Hetzler",
+      "date": "2026-04-03",
+      "source": "facebook",
+      "message": "יום הולדת שמח Charly! ❤️ מאחל/ת לך רק דברים טובים!",
+      "sent": false
+    },
+    {
+      "name": "Anat Meshel",
+      "date": "2026-04-03",
+      "source": "facebook",
+      "message": "יום הולדת שמח Anat! 🎂 שיהיה לך יום מדהים!",
+      "sent": false
+    },
+    {
+      "name": "Lee Itzhaki",
+      "date": "2026-04-03",
+      "source": "facebook",
+      "message": "Lee יום הולדת שמח! 🎈 שתמשיך להיות מדהים/ה!",
+      "sent": false
+    },
+    {
+      "name": "Sharon Lachman Reich",
+      "date": "2026-04-03",
+      "source": "facebook",
+      "message": "Sharon יום הולדת שמח! 🎈 שתמשיך להיות מדהים/ה!",
+      "sent": false
+    },
+    {
+      "name": "Brittany Cohen",
+      "date": "2026-04-03",
+      "source": "facebook",
+      "message": "Brittany יום הולדת שמח! 🎈 שתמשיך להיות מדהים/ה!",
+      "sent": false
+    },
+    {
+      "name": "May Kind Dizitzer",
+      "date": "2026-04-03",
+      "source": "facebook",
+      "message": "May יום הולדת שמח! 🎈 שתמשיך להיות מדהים/ה!",
+      "sent": false
+    },
+    {
+      "name": "Carlye Frost",
+      "date": "2026-04-03",
+      "source": "facebook",
+      "message": "Carlye, מזל טוב! 🌟 שנה חדשה מלאה בהצלחות!",
+      "sent": false
+    },
+    {
+      "name": "Hed Shefer",
+      "date": "2026-04-03",
+      "source": "facebook",
+      "message": "יום הולדת שמח Hed! ❤️ מאחל/ת לך רק דברים טובים!",
+      "sent": false
+    },
+    {
+      "name": "Coral Pschepuircka Avidan",
+      "date": "2026-04-03",
+      "source": "facebook",
+      "message": "יום הולדת שמח Coral! 🎁 שיהיה מושלם!",
+      "sent": false
+    },
+    {
+      "name": "Ran Baruch",
+      "date": "2026-04-03",
+      "source": "facebook",
+      "message": "יום הולדת שמח Ran! 🎂 שיהיה לך יום מדהים!",
+      "sent": false
+    },
+    {
+      "name": "Shay Finkelman",
+      "date": "2026-04-03",
+      "source": "facebook",
+      "message": "Shay, מזל טוב! 🌟 שנה חדשה מלאה בהצלחות!",
+      "sent": false
+    },
+    {
+      "name": "Justin Mendelson",
+      "date": "2026-04-03",
+      "source": "facebook",
+      "message": "Justin יום הולדת שמח! 🎈 שתמשיך להיות מדהים/ה!",
+      "sent": false
+    },
+    {
+      "name": "Mor Krochero",
+      "date": "2026-04-03",
+      "source": "facebook",
+      "message": "יום הולדת שמח Mor! 🎁 שיהיה מושלם!",
+      "sent": false
+    },
+    {
+      "name": "Din Ben Shitrit Shefi",
+      "date": "2026-04-03",
+      "source": "facebook",
+      "message": "Din, יום הולדת שמח! 🎉 מאחל/ת לך שנה מלאה באושר ובריאות!",
+      "sent": false
+    },
+    {
+      "name": "Daniel Shtainberg",
+      "date": "2026-04-03",
+      "source": "facebook",
+      "message": "יום הולדת שמח Daniel! 🎂 שיהיה לך יום מדהים!",
+      "sent": false
+    },
+    {
+      "name": "Gilad Wagner",
+      "date": "2026-04-03",
+      "source": "facebook",
+      "message": "מזל טוב Gilad! 🥳 שכל המשאלות שלך יתגשמו!",
+      "sent": false
+    },
+    {
+      "name": "Omer Karako",
+      "date": "2026-04-03",
+      "source": "facebook",
+      "message": "יום הולדת שמח Omer! ❤️ מאחל/ת לך רק דברים טובים!",
+      "sent": false
+    },
+    {
+      "name": "Ada Silberstein",
+      "date": "2026-04-03",
+      "source": "facebook",
+      "message": "Ada, מזל טוב! 🌟 שנה חדשה מלאה בהצלחות!",
+      "sent": false
+    },
+    {
+      "name": "Shir Erez",
+      "date": "2026-04-03",
+      "source": "facebook",
+      "message": "מזל טוב Shir! 💫 מאחל/ת לך את כל הטוב שבעולם!",
+      "sent": false
+    },
+    {
+      "name": "Shir Naiberg",
+      "date": "2026-04-03",
+      "source": "facebook",
+      "message": "Shir, יום הולדת שמח! 🎉 מאחל/ת לך שנה מלאה באושר ובריאות!",
+      "sent": false
+    },
+    {
+      "name": "Raz Daniel Mendel",
+      "date": "2026-04-03",
+      "source": "facebook",
+      "message": "מזל טוב Raz! 🥳 שכל המשאלות שלך יתגשמו!",
+      "sent": false
+    },
+    {
+      "name": "Gal Sagiv",
+      "date": "2026-04-03",
+      "source": "facebook",
+      "message": "Gal יום הולדת שמח! 🎈 שתמשיך להיות מדהים/ה!",
+      "sent": false
+    },
+    {
+      "name": "Yarden Ti",
+      "date": "2026-04-03",
+      "source": "facebook",
+      "message": "מזל טוב Yarden! 🥳 שכל המשאלות שלך יתגשמו!",
+      "sent": false
+    },
+    {
+      "name": "Stav Gofer",
+      "date": "2026-04-03",
+      "source": "facebook",
+      "message": "יום הולדת שמח Stav! ❤️ מאחל/ת לך רק דברים טובים!",
+      "sent": false
+    },
+    {
+      "name": "Amir Gal Unik",
+      "date": "2026-04-03",
+      "source": "facebook",
+      "message": "Amir, יום הולדת שמח! 🎉 מאחל/ת לך שנה מלאה באושר ובריאות!",
+      "sent": false
+    },
+    {
+      "name": "Liron Tzour",
+      "date": "2026-04-03",
+      "source": "facebook",
+      "message": "Liron, מזל טוב! 🌟 שנה חדשה מלאה בהצלחות!",
+      "sent": false
+    },
+    {
+      "name": "Shiraz Malul Hermon",
+      "date": "2026-04-03",
+      "source": "facebook",
+      "message": "מזל טוב Shiraz! 💫 מאחל/ת לך את כל הטוב שבעולם!",
+      "sent": false
+    },
+    {
+      "name": "Dani Baza",
+      "date": "2026-04-03",
+      "source": "facebook",
+      "message": "יום הולדת שמח Dani! 🎂 שיהיה לך יום מדהים!",
+      "sent": false
+    },
+    {
+      "name": "Michelle Bogatirev Tirosh",
+      "date": "2026-04-03",
+      "source": "facebook",
+      "message": "Michelle, יום הולדת שמח! 🎉 מאחל/ת לך שנה מלאה באושר ובריאות!",
+      "sent": false
+    },
+    {
+      "name": "Noam Applebaum",
+      "date": "2026-04-03",
+      "source": "facebook",
+      "message": "מזל טוב Noam! 💫 מאחל/ת לך את כל הטוב שבעולם!",
+      "sent": false
+    },
+    {
+      "name": "Aviv Eshed",
+      "date": "2026-04-03",
+      "source": "facebook",
+      "message": "Aviv, מזל טוב! 🌟 שנה חדשה מלאה בהצלחות!",
+      "sent": false
+    },
+    {
+      "name": "May Hanan",
+      "date": "2026-04-03",
+      "source": "facebook",
+      "message": "יום הולדת שמח May! ❤️ מאחל/ת לך רק דברים טובים!",
+      "sent": false
+    },
+    {
+      "name": "Guy Shaked",
+      "date": "2026-04-03",
+      "source": "facebook",
+      "message": "Guy, יום הולדת שמח! 🎉 מאחל/ת לך שנה מלאה באושר ובריאות!",
+      "sent": false
+    },
+    {
+      "name": "Ben Yifrah Selinger",
+      "date": "2026-04-03",
+      "source": "facebook",
+      "message": "יום הולדת שמח Ben! 🎁 שיהיה מושלם!",
+      "sent": false
+    }
+  ]
+}
